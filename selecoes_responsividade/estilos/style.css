@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    font-size: 62.5%;
+}
+h1{
+    opacity: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    text-align: center;
+    color:blueviolet;
+    
+}
+a{
+    background-color: slateblue;
+    color: aliceblue;
+    border: none;
+    font-size: 2.8;
+    padding: 0.6rem 2.4rem;
+    cursor: pointer;
+    margin: auto;
+    width: 50%;
+    text-decoration: none;
+    transition: all .2s ease-in-out, background-color 1s ease-in-out;
+
+    display:block;
+}
+
+
+[data-anchor="product"]:hover{
+    background-color: aquamarine;
+    color: gray;
+    transform:scale(1.2);
+
+}
+
+[data-anchor="time"]{
+    margin-top: 2rem;
+    animation: pulse 2s infinite;
+    animation-direction: alternate;
+    transform: scale(1);
+
+}
+
+@keyframes pulse{/*animação constante*/
+    0%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    50%{
+        transform: scale(1.35);
+        opacity: .6;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h2{
+    font-size: 2.5rem;
+}
+
+.bg{
+    height: 20vh;
+    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1485988412941-77a35537dae4?q=80&w=1796&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+table, td, th{
+    border: 1px solid black;
+    margin: 30px;
+}
+
+table tr:first-child{/*adiciona cor ao primeiro filho*/
+    background-color: rgb(0, 162, 255);
+    color: azure;
+}
+
+table tr:nth-child(2n + 3){/*alternar cores de linha da tabela*/
+    background-color: gainsboro
+}
+table{
+    font-size: 2.4rem;
+    border-collapse: separate;
+}
+
+
+[data-company="CO"]{/*maneira de chamar um atributos customizados (criado por vc mesmo do html no css)*/
+    background-color: aquamarine;
+
+}
+.spinner-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-spinner{/*tem que importar*/
+    margin-top: 3rem;
+    margin: 4rem;
+    font-size: 4rem;
+    color: red;
+    animation: load 1s infinite;
+}
+
+@keyframes Load{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    40%{
+        transform: rotate(240deg);
+    }
+    100%{
+        transform: rotateZ(180deg);
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .bg{
+        height: 50vh;
+    }
+    
+}
+@media screen and (min-width: 767px) and (max-width : 999px) {
+    .bg{
+        height: 88vh;
+    }
+    
+}
+@media screen and (max-width: 766px) {
+    table{
+        display: none;
+    }
+    h1{
+        color: red;
+    }
+
+}
+@media print {
+    .bg{
+        display: none;
+    }
+    
+}
